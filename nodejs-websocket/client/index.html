@@ -10,14 +10,26 @@
 <title>Node.JS - Socket.io</title>
 </head>
 <body>
-node js and socket io test
+node js and socket io test<br><br><br>
 
+Username:
+<input id="user-input"><button id="setuser-button">Set Username</button>
+
+<br><br><br>
 <input id="message-input"><button id="send-button">Send Message</button>
+
+<div id="message-container"></div>
 
 <script>
 $(document).ready(function(){
 	APP.init();
-	APP.sendMsg('webpage loaded');
+	//APP.setUsername('delux247');
+	///APP.sendMsg('webpage loaded');
+
+	var theUserInput = $('#user-input');
+	$('#setuser-button').click(function(){
+			APP.setUsername(theUserInput.val());
+	});
 
 	var theMsgInput = $('#message-input');
 
